@@ -7,8 +7,8 @@ module.exports = gql`
   }
 
   type Country @key(fields: "code") {
-    code: ID!
-    name: String!
+    code: ID
+    name: String
   }
 
   type Region @key(fields: "id") {
