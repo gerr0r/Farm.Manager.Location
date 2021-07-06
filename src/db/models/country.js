@@ -14,11 +14,21 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Code is required"
+        }
+      }
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+      validate: {
+        notEmpty: {
+          msg: "Name is required"
+        }
+      }
     },
     createdAt: {
       allowNull: false,

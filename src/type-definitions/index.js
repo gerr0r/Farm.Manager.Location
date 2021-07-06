@@ -6,6 +6,11 @@ module.exports = gql`
     getRegions(countryId: ID): [Region]
   }
 
+  extend type Mutation {
+    addCountry(code: String!, name: String!): Country
+    addRegion(countryId: String!, name: String!): Region
+  }
+
   type Country @key(fields: "code") {
     code: ID
     name: String
