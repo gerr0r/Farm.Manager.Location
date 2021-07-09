@@ -11,7 +11,7 @@ module.exports = {
 
     async getRegions(parent, args, context) {
       const { token } = context;
-      if (!hasRights(token, "master")) throw new Error("Unauthorized");
+      if (!hasRights(token, "master") && !hasRights(token, "admin")) throw new Error("Unauthorized");
       return await db.Region.findAll({ where: { countryId: args.countryId } });
     },
   },
